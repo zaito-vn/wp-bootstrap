@@ -1,0 +1,22 @@
+/*
+Theme Name: ZaiTo
+Description: The 2010 default theme for WordPress.
+Author: Trong Tran
+Author URI: http://twitter.com/trongtt
+Version: 1.0
+*/
+
+@import "assets/bootstrap/css/bootstrap.css";
+@import "assets/bootstrap/css/bootstrap-reponsive.css";
+
+body {
+  padding-top: 60px;
+}
+
+.post .entry-title {
+	border-top: 1px solid #AAB123;
+}
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 1170px;
+}
