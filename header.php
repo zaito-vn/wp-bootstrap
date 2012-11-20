@@ -31,7 +31,7 @@
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="/">Bootstrap</a>
+        <a class="brand" href="<?php echo home_url( '/' ); ?>">Bootstrap</a>
           <?php
            /** Loading WordPress Custom Menu  **/
            wp_nav_menu( array(
@@ -39,7 +39,7 @@
               'menu_class'      => 'nav',
               'menu_id' => 'main-menu'
           ) ); ?>
-          <?php get_search_form(); ?>
+          <div class="pull-right"><?php get_search_form(); ?></div>
       </div>
     </div>
   </div>

@@ -2,7 +2,9 @@
   <div class="row-fluid">
     <div class="span9">
 <?php if ( have_posts() ) : ?>
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyten' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		    <div class="alert alert-success">
+		    	<?php printf('Search Results for: %s', '<strong>' . get_search_query() . '</strong>' ); ?>
+    		</div>
 				<?php
 				/* Run the loop for the search to output the results.
 				 * If you want to overload this in a child theme then include a file
