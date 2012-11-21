@@ -50,7 +50,7 @@
 			<?php echo get_the_date(); ?>
 		</div><!-- .entry-meta -->
 
-		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+		<h3 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 		<div class="entry-summary">
@@ -66,16 +66,30 @@
 		<div class="entry-utility">
 			<?php if ( count( get_the_category() ) ) : ?>
 				<span class="cat-links">
-					<?php printf('<span class="%1$s">Posted in</span> %2$s', 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+					<span>Categorized: </span>
+					<?php
+						$categories = get_the_category();
+						foreach ( $categories as $category ) {
+							printf('<a class="label label-important" href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '" ' . $rel . '>' . $category->name.'</a> ');
+						}
+					?>
 				</span>
 				<span class="meta-sep">|</span>
 			<?php endif; ?>
 			<?php
-				$tags_list = get_the_tag_list( '', ', ' );
-				if ( $tags_list ):
+				$terms = get_the_terms(false, 'post_tag');
+				if ( !empty( $terms ) ):
 			?>
 				<span class="tag-links">
-					<?php printf('<span class="%1$s">Tagged</span> %2$s', 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+					<span>Tagged: </span>
+					<?php
+						foreach ( $terms as $term ) {
+							$link = get_term_link( $term, $taxonomy );
+							if ( is_wp_error( $link ) )
+								return $link;
+							printf('<a class="label label-info" href="' . esc_url( $link ) . '" rel="tag">' . $term->name . '</a> ');
+						}
+					?>
 				</span>
 				<span class="meta-sep">|</span>
 			<?php endif; ?>
