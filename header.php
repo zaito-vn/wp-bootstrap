@@ -37,7 +37,8 @@
            wp_nav_menu( array(
               'container_class' => 'nav-collapse collapse',
               'menu_class'      => 'nav',
-              'menu_id' => 'main-menu'
+              'menu_id' => 'main-menu',
+              'fallback_cb'		=>	false,
           ) ); ?>
           <div class="pull-right"><?php get_search_form(); ?></div>
       </div>
