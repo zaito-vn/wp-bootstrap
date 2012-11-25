@@ -21,3 +21,6 @@ body {
 .navbar-fixed-bottom .container {
   width: 1170px;
 }
+.children {
+  margin-top: 15px;
+}
