@@ -13,13 +13,12 @@
 				 get_template_part( 'loop', 'search' );
 				?>
 <?php else : ?>
-				<div id="post-0" class="post no-results not-found">
-					<h2 class="entry-title"><?php _e( 'Nothing Found', 'twentyten' ); ?></h2>
-					<div class="entry-content">
-						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyten' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</div><!-- #post-0 -->
+				<div class="alert alert-block">
+					<button data-dismiss="alert" class="close" type="button">x</button>
+			    <h4>Nothing Found</h4>
+			    <p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>
+			  </div>
+			  <?php get_search_form(); ?>
 <?php endif; ?>
     </div>
     <div class="span3">

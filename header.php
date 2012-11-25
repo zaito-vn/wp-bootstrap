@@ -20,10 +20,12 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		echo ' | ' . sprintf('Page %s', max( $paged, $page ) );
 
 	?></title>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/bootstrap/js/bootstrap.js"></script>
 </head>
 <body <?php body_class(); ?>>
 
