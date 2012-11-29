@@ -1,4 +1,3 @@
-<?php if ($_GET['q'] == "ajax") { echo "hello";}?>
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<div class="alert alert-block">
@@ -9,13 +8,13 @@
 <?php endif; ?>
 	<span data-toggle="collapse" data-target=".post-content"><button type="button" class="btn" data-toggle="button">Collapsing</button></span>
 <?php while ( have_posts() ) : the_post(); ?>
-<div class="well well-small">
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="entry-meta">
-			<?php echo get_the_date(); ?>
-		</div><!-- .entry-meta -->
-
-		<h3 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+		<div class="page-header">
+			<h2 class="post-title">
+				<a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+			</h2>
+			<span>Posted on <?php echo get_the_date(); ?></span>
+		</div>
 		<div class="post-content collapse in">
 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 		<div class="entry-summary">
@@ -65,7 +64,6 @@
 	</div><!-- #post-## -->
 
 	<?php comments_template( '', true ); ?>
-</div>
 <?php endwhile; // End the loop. Whew. ?>
 
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>

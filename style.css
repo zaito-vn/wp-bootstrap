@@ -1,4 +1,6 @@
 @import "assets/bootstrap/css/bootstrap.css";
+
+@import "assets/bootstrap/css/responsive.css";
 /*
 Theme Name: ZaiTo
 Description: The 2010 default theme for WordPress.
@@ -10,7 +12,7 @@ body {
   padding-top: 60px;
 }
 .post-title {
-  border-top: 1px solid #AAB123;
+  margin: 0px;
 }
 /*
  *	Bootstrap customization
