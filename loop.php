@@ -6,16 +6,16 @@
     <p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.</p>
   </div>
 <?php endif; ?>
-	<span data-toggle="collapse" data-target=".post-content"><button type="button" class="btn" data-toggle="button">Collapsing</button></span>
+
 <?php while ( have_posts() ) : the_post(); ?>
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="page-header">
-			<h2 class="post-title">
-				<a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h2>
-			<span>Posted on <?php echo get_the_date(); ?></span>
+			<h3 class="post-title">
+				<a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a><br>
+				<small><?php echo get_the_date(); ?></small>
+			</h3>
 		</div>
-		<div class="post-content collapse in">
+		<div class="post-content">
 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
@@ -64,7 +64,8 @@
 	</div><!-- #post-## -->
 
 	<?php comments_template( '', true ); ?>
-<?php endwhile; // End the loop. Whew. ?>
+
+	<?php endwhile; // End the loop. Whew. ?>
 
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 	<div class="well well-small">

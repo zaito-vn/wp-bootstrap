@@ -11,8 +11,13 @@ Version: 1.0
 body {
   padding-top: 60px;
 }
+.post {
+  margin-bottom: 40px;
+}
 .post-title {
   margin: 0px;
+  line-height: 24px;
+  font-size: 24px;
 }
 /*
  *	Bootstrap customization
