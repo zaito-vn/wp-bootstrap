@@ -1,6 +1,3 @@
-@import "assets/bootstrap/css/bootstrap.css";
-
-@import "assets/bootstrap/css/responsive.css";
 /*
 Theme Name: WP Bootstrap
 Description: A WordPress theme based on Twitter Bootstrap.
@@ -8,6 +5,9 @@ Author: Trong Tran
 Author URI: http://twitter.com/trongtt
 Version: 1.0
 */
+@import "assets/bootstrap/css/bootstrap.css";
+
+@import "assets/bootstrap/css/responsive.css";
 body {
   padding-top: 60px;
 }
@@ -18,6 +18,9 @@ body {
   margin: 0px;
   line-height: 24px;
   font-size: 24px;
+}
+.post-title small {
+  font-size: 14px;
 }
 /*
  *	Bootstrap customization

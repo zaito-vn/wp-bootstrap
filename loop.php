@@ -10,10 +10,10 @@
 <?php while ( have_posts() ) : the_post(); ?>
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="page-header">
-			<h3 class="post-title">
+			<h2 class="post-title">
 				<a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a><br>
 				<small><?php echo get_the_date(); ?></small>
-			</h3>
+			</h2>
 		</div>
 		<div class="post-content">
 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
