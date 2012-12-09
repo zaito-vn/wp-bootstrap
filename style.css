@@ -1,12 +1,27 @@
+@import "assets/bootstrap/css/bootstrap.css";
 /*
 Theme Name: WP Bootstrap
 Description: A WordPress theme based on Twitter Bootstrap.
 Author: Trong Tran
 Author URI: http://twitter.com/trongtt
 Version: 1.0
+Tags: black, blue, white, two-columns, fixed-width
 */
-@import "assets/bootstrap/css/bootstrap.css";
-
+/*
+ * Bootstrap customization
+ */
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 1170px;
+}
+.children {
+  margin-top: 15px;
+}
+/*
+ * For the theme
+ */
 body {
   padding-top: 60px;
 }
@@ -21,15 +36,9 @@ body {
 .post-title small {
   font-size: 14px;
 }
-/*
- *	Bootstrap customization
- */
-.container,
-.navbar-static-top .container,
-.navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
-  width: 1170px;
+.widget {
+  font-size: 13px;
 }
-.children {
-  margin-top: 15px;
+.widget h3 {
+  margin: 0px;
 }
