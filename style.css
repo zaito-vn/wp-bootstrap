@@ -7,7 +7,6 @@ Version: 1.0
 */
 @import "assets/bootstrap/css/bootstrap.css";
 
-@import "assets/bootstrap/css/responsive.css";
 body {
   padding-top: 60px;
 }

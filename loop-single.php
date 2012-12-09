@@ -8,12 +8,13 @@
 <?php endif; ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
+	<?php echo breadcrumb_lists(); ?>
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="page-header">
-			<h2 class="post-title">
+			<h1 class="post-title">
 				<a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a><br>
 				<small><?php echo get_the_date(); ?></small>
-			</h2>
+			</h1>
 		</div>
 		<div class="post-content">
 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
