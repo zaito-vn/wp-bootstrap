@@ -13,9 +13,10 @@
 			<h2 class="post-title">
 				<a href="<?php the_permalink(); ?>" title="<?php printf('Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a><br>
 				<small><?php echo get_the_date(); ?></small>
+				<a href="#collapse-<?php the_ID(); ?>" class="pull-right" data-toggle="collapse"><i class="icon-chevron-down"></i></a>
 			</h2>
 		</div>
-		<div class="post-content">
+		<div class="post-content collapse in" id="collapse-<?php the_ID(); ?>">
 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
