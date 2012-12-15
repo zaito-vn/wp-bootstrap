@@ -1,7 +1,10 @@
 		<hr>
 		<div id="footer">
-		  footer
+		  <?php bloginfo( 'name' ); ?>
 		</div>
 	</div>
+<?php
+	wp_footer();
+?>
 </body>
 </html>
