@@ -1,12 +1,3 @@
-<?php /* If there are no posts to display, such as an empty archive page */ ?>
-<?php if ( ! have_posts() ) : ?>
-	<div class="alert alert-block">
-		<button data-dismiss="alert" class="close" type="button">x</button>
-    <h4>Not Found!</h4>
-    <p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.</p>
-  </div>
-<?php endif; ?>
-
 <?php while ( have_posts() ) : the_post(); ?>
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="page-header">
@@ -17,8 +8,8 @@
 			</h1>
 		</div>
 		<div class="post-content collapse in" id="collapse-<?php the_ID(); ?>">
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
+		<div class="entry-content">
+			<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . 'Pages:', 'after' => '</div>' ) ); ?>
 		</div>
 		<div class="entry-utility">
@@ -61,7 +52,7 @@
 
 	<?php endwhile; // End the loop. Whew. ?>
 
-<?php if (  $wp_query->max_num_pages > 1 ) : ?>
+	<?php if (  $wp_query->max_num_pages > 1 ) : ?>
 	<div class="well well-small">
 		<div class="nav-previous pull-left"><?php next_posts_link('&larr; Older posts'); ?></div>
 		<div class="nav-next pull-right"><?php previous_posts_link('Newer posts &rarr;'); ?></div>

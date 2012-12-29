@@ -1,4 +1,12 @@
 <?php
+/**
+ * Replaces "[...]"
+ */
+function bootstrap_excerpt_more($more) {
+	return ' ...<div><a href="' . get_permalink() . '">' . __('Xem tiếp &#8250;', 'wp-bootstrap') . '</a></div>';
+}
+
+add_filter('excerpt_more', 'bootstrap_excerpt_more');
 
 function breadcrumb_lists () {
 
