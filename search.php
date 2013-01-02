@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <div class="row-fluid">
+  <div class="row">
     <div class="span9">
 <?php if ( have_posts() ) : ?>
 		    <div class="alert alert-success">
