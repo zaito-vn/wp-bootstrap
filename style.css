@@ -40,6 +40,18 @@ body {
 .widget h3 {
   margin: 0px;
 }
+
+#gotop {
+		display: none;
+	  background: url("assets/images/gotop.gif") no-repeat scroll 0 0 transparent;
+    bottom: 10px;
+    height: 46px;
+    opacity: 0.5;
+    position: fixed;
+    right: 10px;
+    width: 46px;
+    z-index: 9999;
+}
 /********************************
  * WordPress WYSIWYG Editor Styles
  ********************************/
